@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2020-12-02)
+
+- Solved part 2 of day 2 puzzle
+
 ## 0.2.0 (2020-12-02)
 
 - Day 2 solution with Spec and `frequencies`
