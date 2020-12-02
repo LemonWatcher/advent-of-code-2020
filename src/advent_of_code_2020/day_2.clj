@@ -11,8 +11,8 @@
 ;;
 ;;     a-b c: password
 ;;
-;; Where x is the minimum required, and y the maximum allowed, number
-;; of instances of character c in password.
+;; Where a and b are parameters used to validated the usage of
+;; character c in the password.
 
 (defn load-input
   "Fetch the input from a text file."
@@ -43,7 +43,7 @@
    :password ::password))
 
 (defn coerce-int
-  "Coerce a sequence of digit characters in `chars` into an `Integer`."
+  "Coerce a sequence of digit characters in `chars` into an `Integer`." 
   [chars]
   (Integer/parseInt (apply str chars)))
 
