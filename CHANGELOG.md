@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0 (2020-12-02)
+
+- Day 2 solution with Spec and `frequencies`
+
 ## 0.1.2 (2020-12-02)
 
 ### Added
