@@ -58,13 +58,13 @@
      :password password ;; don't bother coercing to a string
      }))
 
-(defn matches-sled-rental-policy?
+(defn sled-rental-policy
   "Check if the password matches the sled rental policy."
   [{:keys [a b char password]}]
   (let [freqs (frequencies password)]
     (<= a (freqs char 0) b)))
 
-(defn matches-official-toboggan-corporate-policy?
+(defn official-toboggan-corporate-policy
   "Check if the password matches Official Toboggan Corporate policy."
   [{:keys [a b char password]}]
   (let [a? (= char (nth password (dec a)))
@@ -86,14 +86,14 @@
 
 (deftest valid-line-tests
   (testing "sled rental policy"
-    (is (valid-line? matches-sled-rental-policy? "1-3 a: abcde"))
-    (is (not (valid-line? matches-sled-rental-policy? "1-3 b: cdefg")))
-    (is (valid-line? matches-sled-rental-policy? "2-9 c: ccccccccc")))
+    (is (valid-line? sled-rental-policy "1-3 a: abcde"))
+    (is (not (valid-line? sled-rental-policy "1-3 b: cdefg")))
+    (is (valid-line? sled-rental-policy "2-9 c: ccccccccc")))
   (testing "official toboggan corporate policy"
-    (is (valid-line? matches-official-toboggan-corporate-policy? "1-3 a: abcde"))
-    (is (not (valid-line? matches-official-toboggan-corporate-policy? "1-3 b: cdefg")))
-    (is (not (valid-line? matches-official-toboggan-corporate-policy? "2-9 c: ccccccccc")))))
+    (is (valid-line? official-toboggan-corporate-policy "1-3 a: abcde"))
+    (is (not (valid-line? official-toboggan-corporate-policy "1-3 b: cdefg")))
+    (is (not (valid-line? official-toboggan-corporate-policy "2-9 c: ccccccccc")))))
 
 (deftest count-valid-passwords-test
-  (is (= 628 (count-valid-passwords matches-sled-rental-policy?)))
-  (is (= 705 (count-valid-passwords matches-official-toboggan-corporate-policy?))))
+  (is (= 628 (count-valid-passwords sled-rental-policy)))
+  (is (= 705 (count-valid-passwords official-toboggan-corporate-policy))))
