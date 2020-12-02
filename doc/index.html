@@ -2866,10 +2866,11 @@ net.brehaut.ClojureTools = (function (SH) {
   };
 })(SyntaxHighlighter);
 </script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.1.1</h2><br /><p>Advent of Code 2020</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-1
   (:require [clojure.test :refer [deftest testing is]]
-            [clojure.math.combinatorics :refer [combinations]]))</pre></td></tr><tr><td class="docs"><h1>Day 1: Report Repair (https://adventofcode.com/2020/day/1)</h1>
+            [clojure.math.combinatorics :refer [combinations]]
+            [criterium.core :refer [quick-bench]]))</pre></td></tr><tr><td class="docs"><h1>Day 1: Report Repair (https://adventofcode.com/2020/day/1)</h1>
 
 <p>Find two entries in the input that sum to 2020, and multiply those
 numbers together.</p>
@@ -2885,23 +2886,75 @@ numbers together.</p>
                 :when (= sum 2020)]
             (apply * xs))))
   ([input]
-   (naive-solution input 2)))</pre></td></tr><tr><td class="docs"><h2>Testing</h2>
+   (naive-solution input 2)))</pre></td></tr><tr><td class="docs"><p>The simplest recursive solution short circuits a bit more and so is a
+  little faster with bigger inputs and subsets.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn recursive-solution
+  ([input n sum product]
+   (cond
+     (and (zero? n)
+          (= sum 2020)) product
+     (or (zero? n)
+         (&gt; sum 2020)) nil
+     :else (some identity
+                 (map-indexed
+                  (fn [i x]
+                    (recursive-solution (concat (take i input)
+                                                (drop (inc i) input))
+                                        (dec n)
+                                        (+ sum x)
+                                        (* product x)))
+                  input))))
+  ([input n]
+   (recursive-solution input n 0 1))
+  ([input]
+   (recursive-solution input 2)))</pre></td></tr><tr><td class="docs"><h2>Testing</h2>
 
 <p>Some test cases. It's important that we don't allow edge cases like
 summing a number with itself.</p>
 </td><td class="codes"></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(deftest naive-solution-tests
-  (testing &quot;doesn't find the sum if list is too short&quot;
-    (is (nil? (naive-solution [1010]))))
-  (testing &quot;doesn't allow numbers to sum with themselves&quot;
-    (is (nil? (naive-solution [1010 1 2 3]))))
-  (testing &quot;returns correct product for valid lists&quot;
-    (is (= (* 1010 1010) (naive-solution [1010 1010])))
-    (is (= 514579 (naive-solution [1721 979 366 299 675 1456])))
-    (is (= 964875 (naive-solution input))))
-  (testing &quot;allows combinations of arbitrary size&quot;
-    (is (= 241861950 (naive-solution [1721 979 366 299 675 1456] 3)))
-    (is (= 158661360 (naive-solution input 3)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+</td><td class="codes"><pre class="brush: clojure">(deftest solution-tests
+  (doseq [solution [naive-solution recursive-solution]]
+    (testing (clojure.repl/demunge (str solution))
+      (testing &quot;doesn't find the sum if list is too short&quot;
+        (is (nil? (solution [1010]))))
+      (testing &quot;doesn't allow numbers to sum with themselves&quot;
+        (is (nil? (solution [1010 1 2 3]))))
+      (testing &quot;returns correct product for valid lists&quot;
+        (is (= (* 1010 1010) (solution [1010 1010])))
+        (is (= 514579 (solution [1721 979 366 299 675 1456])))
+        (is (= 964875 (solution input))))
+      (testing &quot;allows combinations of arbitrary size&quot;
+        (is (= 241861950 (solution [1721 979 366 299 675 1456] 3)))
+        (is (= 158661360 (solution input 3)))))))</pre></td></tr><tr><td class="docs"><p>Generate a test sequence guaranteed to contain a subset with length
+  <code>n</code> that sums to 2020.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn random-input
+  [length n]
+  (let [[xs rest] (-&gt;&gt; (partial rand-int 2100)
+                       repeatedly
+                       (take (dec length))
+                       (split-at (dec n)))
+        ;; guarantee at least one hit
+        y (apply - 2020 xs)]
+    (shuffle (concat [y] xs rest))))</pre></td></tr><tr><td class="docs"><h1>Benchmarks</h1>
+
+<p>Comparing the performance of the naive and recursive
+approaches. Recorded on a Linux VM running on a Chromebook, please
+don't laugh.</p>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Evaluation count : 6 in 6 samples of 1 calls.
+Execution time mean : 118.488980 ms
+Execution time std-deviation : 30.464186 ms
+Execution time lower quantile : 81.965276 ms ( 2.5%)
+Execution time upper quantile : 148.631309 ms (97.5%)
+Overhead used : 31.894745 ns</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(comment (quick-bench (recursive-solution (random-input 10000 3) 3)))</pre></td></tr><tr><td class="docs"><p>Evaluation count : 12 in 6 samples of 2 calls.
+Execution time mean : 4.233666 sec
+Execution time std-deviation : 9.750836 sec
+Execution time lower quantile : 61.125691 ms ( 2.5%)
+Execution time upper quantile : 21.115343 sec (97.5%)
+Overhead used : 31.894745 ns</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(comment (quick-bench (naive-solution (random-input 100000 3) 3)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
