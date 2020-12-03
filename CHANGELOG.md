@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 (2020-12-03)
+
+- Solved Day 3 puzzles
+
 ## 0.2.1 (2020-12-02)
 
 - Solved part 2 of day 2 puzzle
