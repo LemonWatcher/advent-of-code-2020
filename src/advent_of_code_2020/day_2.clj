@@ -6,12 +6,12 @@
 
 ;; # Day 2: Password Philosophy
 ;;
-;; Read lines of password policies and passwords, and check i f the
+;; Read lines of password policies and passwords, and check if the
 ;; password matches the policy. Each line is of the form:
 ;;
 ;;     a-b c: password
 ;;
-;; Where a and b are parameters used to validated the usage of
+;; Where a and b are parameters used to validate the usage of
 ;; character c in the password.
 
 (defn load-input
