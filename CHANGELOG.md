@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 (2020-12-04)
+
+- Solved the day 4 puzzles with Instaparse and Spec
+
 ## 0.3.0 (2020-12-03)
 
 - Solved Day 3 puzzles
