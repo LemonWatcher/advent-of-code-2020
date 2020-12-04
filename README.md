@@ -5,7 +5,7 @@ My repository of solutions to 2020's advent of code, in Clojure.
 ## Structure
 
 Each namespace is named for a day, tests are kept alongside solutions,
-and Marginalia docs are kept in the doc folder.
+and [Marginalia docs](https://lemonwatcher.com/advent.html) are kept in the doc folder.
 
 ## License
 
