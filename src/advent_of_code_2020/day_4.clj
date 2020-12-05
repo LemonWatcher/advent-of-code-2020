@@ -136,7 +136,6 @@ iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719")
 (defn valid-passport?
   "Is the parsed `passport` valid given the rules defined by `spec`?"
   [spec passport]
-  (s/explain spec passport)
   (s/valid? spec passport))
 
 (defn count-valid-passports
