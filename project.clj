@@ -1,4 +1,4 @@
-(defproject advent-of-code-2020 "0.4.0"
+(defproject advent-of-code-2020 "0.5.0"
   :description "Advent of Code 2020"
   :url "https://github.com/lemonwatcher/advent-of-code-2020"
   :license {:name "GNU Affero General Public License Version 3"

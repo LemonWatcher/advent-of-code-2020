@@ -2865,8 +2865,8 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.4.0</h2><br /><p>Advent of Code 2020</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.5.0</h2><br /><p>Advent of Code 2020</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-1
   (:require [clojure.test :refer [deftest testing is]]
             [clojure.math.combinatorics :refer [combinations]]
@@ -3247,7 +3247,6 @@ the second part.</p>
                                 :opt-un [:strict/cid]))</pre></td></tr><tr><td class="docs"><p>Is the parsed <code>passport</code> valid given the rules defined by <code>spec</code>?</p>
 </td><td class="codes"><pre class="brush: clojure">(defn valid-passport?
   [spec passport]
-  (s/explain spec passport)
   (s/valid? spec passport))</pre></td></tr><tr><td class="docs"><p>How many valid passports are there in <code>input</code> as defined by <code>spec</code>?</p>
 </td><td class="codes"><pre class="brush: clojure">(defn count-valid-passports
   [spec input]
@@ -3282,7 +3281,66 @@ the second part.</p>
   (is (s/valid? :strict/ecl &quot;brn&quot;))
   (is (not (s/valid? :strict/ecl &quot;wat&quot;)))
   (is (s/valid? :strict/pid &quot;000000001&quot;))
-  (is (not (s/valid? :strict/pid &quot;0123456789&quot;))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+  (is (not (s/valid? :strict/pid &quot;0123456789&quot;))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-5" name="advent-of-code-2020.day-5"><h1 class="project-name">advent-of-code-2020.day-5</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-5
+  (:require [clojure.test :refer [deftest testing is]]
+            [clojure.java.io :as io]
+            [clojure.string :refer [split-lines]]))</pre></td></tr><tr><td class="docs"><h1>Day 5: Binary Boarding</h1>
+
+<p>Seats on a plane are identified with a binary partitioning scheme
+like the following:</p>
+
+<pre><code>FBFBBFFRLR
+</code></pre>
+
+<p>Where F means the front of the partition, B means back, L means
+left, R means right, in a plane with 128 rows and 8 columns.</p>
+</td><td class="codes"></td></tr><tr><td class="docs"><h2>Parsing</h2>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Trivially, <code>F</code> and <code>L</code> are zeroes, <code>B</code> and <code>R</code> are ones.</p>
+</td><td class="codes"><pre class="brush: clojure">(def bits
+  {\F 0
+   \L 0
+   \B 1
+   \R 1})</pre></td></tr><tr><td class="docs"><p>Seats are just binary numbers, so translate into a long.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn parse-seat
+  [seat]
+  (loop [id 0
+         [bit &amp; seat] seat]
+    (if-not bit
+      id
+      (recur (bit-or
+              (bit-shift-left id 1)
+              (bits bit))
+             seat))))</pre></td></tr><tr><td class="docs"><p>Load and parse all the seats.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn seats
+  []
+  (-&gt;&gt; &quot;input/day_5.txt&quot;
+       io/resource
+       slurp
+       split-lines
+       (map parse-seat)))</pre></td></tr><tr><td class="docs"><h2>Puzzle</h2>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Find the highest seat ID.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn highest-seat-id
+  [seats]
+  (reduce max seats))</pre></td></tr><tr><td class="docs"><p>Find the missing seat in an otherwise empty plane.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn missing-seat
+  [seats]
+  (reduce (fn [prev seat]
+            (let [expected-seat (inc prev)]
+              (if (and prev (not= seat expected-seat))
+                (reduced expected-seat)
+                seat)))
+          (sort seats)))</pre></td></tr><tr><td class="docs"><h2>Testing</h2>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest parse-seat-test
+  (is (= 357 (parse-seat &quot;FBFBBFFRLR&quot;)))
+  (is (= 567 (parse-seat &quot;BFFFBBFRRR&quot;)))
+  (is (= 119 (parse-seat &quot;FFFBBBFRRR&quot;)))
+  (is (= 820 (parse-seat &quot;BBFFBBFRLL&quot;))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest highest-seat-id-test
+  (is (= 826 (highest-seat-id (seats)))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest missing-seat-test
+  (is (= 678 (missing-seat (seats)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack

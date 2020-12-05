@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0 (2020-12-05
+
+- Solved day 5 with some trivial binary ops.
+
 ## 0.4.0 (2020-12-04)
 
 - Solved the day 4 puzzles with Instaparse and Spec
