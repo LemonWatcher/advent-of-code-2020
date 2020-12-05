@@ -55,7 +55,7 @@
   [seats]
   (reduce (fn [prev seat]
             (let [expected-seat (inc prev)]
-              (if (and prev (not= seat expected-seat))
+              (if (not= seat expected-seat)
                 (reduced expected-seat)
                 seat)))
           (sort seats)))

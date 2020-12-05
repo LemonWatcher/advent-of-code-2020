@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 (2020-12-05)
+
+- Minor cleanup of day 5.
+
 ## 0.5.0 (2020-12-05
 
 - Solved day 5 with some trivial binary ops.
