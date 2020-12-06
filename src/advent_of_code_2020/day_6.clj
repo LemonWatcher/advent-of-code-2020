@@ -25,7 +25,7 @@
 ;;     b
 ;;
 ;; Where each character represents one of 26 questions that were
-;; answered yes by a users. Each line is one users, each group is
+;; answered yes by a user. Each line is one user, each group is
 ;; separated by a blank line.
 
 ;; ## Input
