@@ -60,6 +60,19 @@
                 seat)))
           (sort seats)))
 
+(defn missing-seat-linear
+  "Find the missing seat without the initial sort."
+  [seats]
+  (let [reservations (boolean-array (* 8 128) false)]
+    (doseq [seat seats]
+      (aset reservations seat true))
+    (loop [i 0
+           prev false]
+      (let [reserved? (aget reservations i)]
+        (if (and prev (not reserved?))
+          i
+          (recur (unchecked-inc-int i) reserved?))))))
+
 ;; ## Testing
 
 (deftest parse-seat-test
@@ -72,4 +85,36 @@
   (is (= 826 (highest-seat-id (seats)))))
 
 (deftest missing-seat-test
-  (is (= 678 (missing-seat (seats)))))
+  (is (= 678 (missing-seat (seats))))
+  (is (= 678 (missing-seat-linear (seats)))))
+
+;; ## Benchmarks
+;;
+;; Showing that the linear approach to the missing seat is
+;; substantially faster.
+
+(comment
+  (let [seats (seats)]
+    ;; Evaluation count : 498 in 6 samples of 83 calls.
+    ;; Execution time mean : 1.194823 ms
+    ;; Execution time std-deviation : 32.001224 µs
+    ;; Execution time lower quantile : 1.175012 ms ( 2.5%)
+    ;; Execution time upper quantile : 1.250110 ms (97.5%)
+    ;; Overhead used : 31.740990 ns
+
+    ;; Found 1 outliers in 6 samples (16.6667 %)
+    ;; low-severe	 1 (16.6667 %)
+    ;; Variance from outliers : 13.8889 % Variance is moderately inflated by outliers
+    (quick-bench (missing-seat seats))
+
+    ;; Evaluation count : 10302 in 6 samples of 1717 calls.
+    ;; Execution time mean : 61.160273 µs
+    ;; Execution time std-deviation : 3.010229 µs
+    ;; Execution time lower quantile : 58.867294 µs ( 2.5%)
+    ;; Execution time upper quantile : 66.168131 µs (97.5%)
+    ;; Overhead used : 31.740990 ns
+
+    ;; Found 1 outliers in 6 samples (16.6667 %)
+    ;; low-severe	 1 (16.6667 %)
+    ;; Variance from outliers : 13.8889 % Variance is moderately inflated by outliers
+    (quick-bench (missing-seat-linear seats))))
