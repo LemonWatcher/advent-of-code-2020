@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.5.2 (2020-12-06
+## 0.6.0 (2020-12-06)
+
+- Answerd day 6 with sets.
+
+## 0.5.2 (2020-12-06)
 
 - Wrote a linear time approach to day 5's missing seat puzzle.
 
