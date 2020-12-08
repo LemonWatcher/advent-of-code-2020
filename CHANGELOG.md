@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0 (2020-12-07)
+
+- Boring recursive solutions to bag problem.
+
 ## 0.6.0 (2020-12-06)
 
 - Answerd day 6 with sets.
