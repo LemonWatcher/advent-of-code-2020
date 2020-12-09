@@ -2865,8 +2865,8 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.7.0</h2><br /><p>Advent of Code 2020</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.8.0</h2><br /><p>Advent of Code 2020</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr><tr><td class="dep-name">aysylu/loom</td><td class="dotted"><hr /></td><td class="dep-version">1.0.2</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li><li><a href="#advent-of-code-2020.day-8">advent-of-code-2020.day-8</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-1
   (:require [clojure.test :refer [deftest testing is]]
             [clojure.math.combinatorics :refer [combinations]]
@@ -3571,7 +3571,86 @@ dotted black bags contain no other bags.&quot;)</pre></td></tr><tr><td class="do
     (is (= 0 (count-contents rules :dotted-black)))
     (is (= 11 (count-contents rules :vibrant-plum)))
     (is (= 7 (count-contents rules :dark-olive))))
-  (is (= 13264 (count-contents (rules (load-input)) :shiny-gold))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+  (is (= 13264 (count-contents (rules (load-input)) :shiny-gold))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-8" name="advent-of-code-2020.day-8"><h1 class="project-name">advent-of-code-2020.day-8</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-8
+  (:refer-clojure :exclude [compile])
+  (:require [clojure.test :refer [deftest is]]
+            [clojure.java.io :as io]
+            [loom.graph :as g]
+            [loom.alg :as ga]))</pre></td></tr><tr><td class="docs"><h1>Day 8: Handheld Halting</h1>
+
+<p>Implement a simple computer with opcodes with a single argument:
+<code>nop</code> (no op), <code>acc</code> to add the argument to the accumlator, and
+<code>jmp</code> which jumps to an offset defined in arg.</p>
+
+<p>We could implement code to interpret the opcodes and update the
+computer's state at every instructions, but it's actually much
+simpler just to model the computer's program counter as a traversal
+through a graph, with the accumulator being the weights on edges
+originating at <code>acc</code> nodes.</p>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Simple example program with an infinite loop.</p>
+</td><td class="codes"><pre class="brush: clojure">(def example-code
+  &quot;nop +0
+  acc +1
+  jmp +4
+  acc +3
+  jmp -3
+  acc -99
+  acc +1
+  jmp -4
+  acc +6&quot;)</pre></td></tr><tr><td class="docs"><p>Parse the code into a format like:</p>
+
+<pre><code>  [[:nop 0]
+   [:acc 1]]
+</code></pre>
+</td><td class="codes"><pre class="brush: clojure">(defn instructions
+  [code]
+  (vec (for [[_ op arg] (re-seq #&quot;(nop|acc|jmp) ([+-]\d+)&quot; code)]
+         [(keyword op) (read-string arg)])))</pre></td></tr><tr><td class="docs"><p>Use this value as an artificially high weight to ensure that only one
+  edge added during debugging is ever followed.</p>
+</td><td class="codes"><pre class="brush: clojure">(def debug-weight
+  Integer/MAX_VALUE)</pre></td></tr><tr><td class="docs"><p>Compile the vector of instructions in <code>code</code> into a graph, connecting
+  each line with its logical next line, and adding <code>:acc</code> arguments as
+  edge weights.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn compile
+  [code &amp; {:keys [debug] :or {debug false}}]
+  (apply g/weighted-digraph
+         (map-indexed
+          (fn [i [op arg]]
+            (case op
+              ;; When `debug` is `true` we add potential new edges to
+              ;; turn `:nop` operators into `:jmp`s and vice-versa.
+              :nop (if debug
+                     {i (hash-map (+ i arg) debug-weight (inc i) 0 )}
+                     [i (inc i) 0])
+              :acc [i (inc i) arg]
+              :jmp (if debug
+                     {i (hash-map (inc i) debug-weight (+ i arg) 0)}
+                     [i (+ i arg) 0])))
+          (instructions code))))</pre></td></tr><tr><td class="docs"><p>Run the <code>program</code> and return its accumulator, either after program
+  termination, or after meeting an infinite loop.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn run
+  [program]
+  ;; Enumerate nodes differently depending on whether the program
+  ;; is complete or not.
+  (-&gt;&gt; (if (ga/connected? program)
+         (ga/shortest-path program 0 (dec (count (g/nodes program))))
+         (ga/bf-traverse program 0))
+       (partition 2 1)
+       (keep (partial apply g/weight program))
+       ;; We want to follow debug edges but not count their weights.
+       (remove #{debug-weight})
+       (reduce +)))</pre></td></tr><tr><td class="docs"><p>Load today's data.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn load-input
+  []
+  (-&gt; &quot;input/day_8.txt&quot;
+      io/resource
+      slurp))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest run-test
+  (is (= 5 (-&gt; example-code compile run)))
+  (is (= 1930 (-&gt; (load-input) compile run)))
+  (is (= 8 (-&gt; example-code (compile :debug true) run)))
+  (is (= 1688 (-&gt; (load-input) (compile :debug true) run))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-8">advent-of-code-2020.day-8</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
