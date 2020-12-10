@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0 (2020-12-09)
+
+- Solved day 9 with mediocrity.
+
 ## 0.8.0 (2020-12-08)
 
 - Solved day 8 with Loom for some graph algorithms.

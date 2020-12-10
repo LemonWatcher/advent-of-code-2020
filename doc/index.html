@@ -2865,8 +2865,8 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.8.0</h2><br /><p>Advent of Code 2020</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr><tr><td class="dep-name">aysylu/loom</td><td class="dotted"><hr /></td><td class="dep-version">1.0.2</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li><li><a href="#advent-of-code-2020.day-8">advent-of-code-2020.day-8</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.9.0</h2><br /><p>Advent of Code 2020</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr><tr><td class="dep-name">aysylu/loom</td><td class="dotted"><hr /></td><td class="dep-version">1.0.2</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li><li><a href="#advent-of-code-2020.day-8">advent-of-code-2020.day-8</a></li><li><a href="#advent-of-code-2020.day-9">advent-of-code-2020.day-9</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-1
   (:require [clojure.test :refer [deftest testing is]]
             [clojure.math.combinatorics :refer [combinations]]
@@ -3650,7 +3650,67 @@ originating at <code>acc</code> nodes.</p>
   (is (= 5 (-&gt; example-code compile run)))
   (is (= 1930 (-&gt; (load-input) compile run)))
   (is (= 8 (-&gt; example-code (compile :debug true) run)))
-  (is (= 1688 (-&gt; (load-input) (compile :debug true) run))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-8">advent-of-code-2020.day-8</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+  (is (= 1688 (-&gt; (load-input) (compile :debug true) run))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-9" name="advent-of-code-2020.day-9"><h1 class="project-name">advent-of-code-2020.day-9</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-9
+  (:require [clojure.test :refer [deftest testing is]]
+            [clojure.java.io :as io]
+            [clojure.string :refer [split split-lines]]
+            [clojure.math.combinatorics :refer [combinations]]))</pre></td></tr><tr><td class="docs"><h1>Day 9: Encoding Error</h1>
+
+<p>With a preamble of N numbers, validate that each subsequent number
+is a sum of two of the previous N numbers.</p>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>Get the list of numbers.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn load-input
+  []
+  (-&gt;&gt; &quot;input/day_9.txt&quot;
+       io/resource
+       slurp
+       split-lines
+       (map read-string)))</pre></td></tr><tr><td class="docs"><p>Generate some sample data containing the numbers up to
+  <code>preamble-length</code> shuffled, with <code>data</code> appended at the end to
+  validate various scenarios.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn example-input
+  [preamble-length &amp; data]
+  (concat (shuffle (range 1 (inc preamble-length))) data))</pre></td></tr><tr><td class="docs"><p>Slow implementation to check whether <code>x</code> is the sum of any pair of
+  numbers in <code>preamble</code>.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn valid?
+  [preamble x]
+  (some #{x} (map (partial apply +) (combinations preamble 2))))</pre></td></tr><tr><td class="docs"><p>Find a number in <code>data</code> that violates the rule that it must be the
+  sum of two previous numbers within a window of
+  <code>preamble-length</code>. Returns <code>nil</code> if data is valid.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn check-data
+  [preamble-length data]
+  (let [[preamble data] (split-at preamble-length data)]
+    (loop [preamble preamble
+           [x &amp; data] data]
+      (when x
+        (if-not (valid? preamble x)
+          x
+          (recur (concat (rest preamble) [x]) data))))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def test-input [35 20 15 25 47 40 62 55 65 95 102 117 150 182 127 219 299 277 309 576])</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest check-data-tests
+  (is (nil? (check-data 25 (example-input 25 26))))
+  (is (nil? (check-data 25 (example-input 25 49))))
+  (is (= 100 (check-data 25 (example-input 25 100))))
+  (is (= 50 (check-data 25 (example-input 25 50))))
+  (is (nil? (check-data 25 (example-input 25 45 26))))
+  (let [input (concat [20] (range 1 20) (range 21 26) [45])]
+    (is (= 65 (check-data 25 (concat input [65]))))
+    (is (nil? (check-data 25 (concat input [64]))))
+    (is (nil? (check-data 25 (concat input [66])))))
+  (is (= 127 (check-data 5 test-input)))
+  (is (= 466456641 (check-data 25 (load-input)))))</pre></td></tr><tr><td class="docs"><p>Find a range of contiguous numbers in <code>input</code> that sum to <code>target</code>,
+  and return the sum of the minimum and maximum in that range.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn contiguous-sum
+  [target input]
+  (first (for [n (range 2 (count input))
+               partition (partition n 1 input)
+               :when (= target (apply + partition))]
+           (+ (apply min partition) (apply max partition)))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest contiguous-sum-tests
+  (is (= 62 (contiguous-sum 127 test-input)))
+  (let [input (load-input)]
+    (is (= 55732936 (contiguous-sum (check-data 25 input) input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-8">advent-of-code-2020.day-8</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-9">advent-of-code-2020.day-9</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
