@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.10.0 (2020-12-13)
+
+- Solved day 10 with some clever (for me) maths.
+
 ## 0.9.0 (2020-12-09)
 
 - Solved day 9 with mediocrity.

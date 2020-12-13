@@ -2865,8 +2865,107 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.9.0</h2><br /><p>Advent of Code 2020</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr><tr><td class="dep-name">aysylu/loom</td><td class="dotted"><hr /></td><td class="dep-version">1.0.2</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li><li><a href="#advent-of-code-2020.day-8">advent-of-code-2020.day-8</a></li><li><a href="#advent-of-code-2020.day-9">advent-of-code-2020.day-9</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.10.0</h2><br /><p>Advent of Code 2020</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr><tr><td class="dep-name">aysylu/loom</td><td class="dotted"><hr /></td><td class="dep-version">1.0.2</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-10">advent-of-code-2020.day-10</a></li><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li><li><a href="#advent-of-code-2020.day-8">advent-of-code-2020.day-8</a></li><li><a href="#advent-of-code-2020.day-9">advent-of-code-2020.day-9</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-10" name="advent-of-code-2020.day-10"><h1 class="project-name">advent-of-code-2020.day-10</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-10
+  (:require [clojure.test :refer [deftest testing is]]
+            [clojure.string :refer [split-lines]]
+            [clojure.java.io :as io]))</pre></td></tr><tr><td class="docs"><h1>Day 10: Adapter Array</h1>
+
+<p>Adapters have different voltanges and can be chained
+together. Adapters can only cope with differences between 1 and 3
+volts. Initial output voltage is 0, final output voltage is max +
+3.</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def example-adapters
+  [16 10 15 5 1 11 7 19 6 12 4])</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def example-adapters-2
+  [28 33 18 42 31 14 46 20 48 47 24 23 49 45 19 38 39 11 1 32 25 35 8 17 7 9 4 2 34 10 3])</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def output-voltage 0)</pre></td></tr><tr><td class="docs"><p>Final device output is 3 plus the max of your adapters.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn device-voltage
+  [adapters]
+  (+ 3 (reduce max adapters)))</pre></td></tr><tr><td class="docs"><p>You have to use all <code>adapters</code>, in which case the only solution is
+  just a sorted list.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn voltage-differences
+  [adapters]
+  (-&gt;&gt; (conj adapters output-voltage (device-voltage adapters))
+       sort
+       (partition 2 1)
+       (map #(- (second %) (first %)))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest voltage-differences-tests
+  (is (= {1 7 3 5} (frequencies (voltage-differences example-adapters))))
+  (is (= {1 22 3 10} (frequencies (voltage-differences example-adapters-2)))))</pre></td></tr><tr><td class="docs"><p>Part one answer relies on the product of two counts from <code>frequencies</code>.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn product
+  [diffs]
+  (apply * (vals (select-keys (frequencies diffs) [1 3]))))</pre></td></tr><tr><td class="docs"><p>Get the list of numbers.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn load-input
+  []
+  (-&gt;&gt; &quot;input/day_10.txt&quot;
+       io/resource
+       slurp
+       split-lines
+       (map read-string)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest product-differences-tests
+  (is (= 2070 (-&gt; (load-input) voltage-differences product))))</pre></td></tr><tr><td class="docs"><h2>Part 2</h2>
+
+<p>Count the number of possible chains of adapters between the input
+and your device, bearing in mind adapters can only support 1 to 3
+volt differences.</p>
+
+<p>So this is either extremely dumb or showing off. The intuition here
+is very simple: you can't avoid traversing differences of 3 volts,
+so you're not actually interested in them because there's no
+branching. All you're interested in are runs of 1 volt differences
+(input data only seems to have 1 and 3, fortunately).</p>
+
+<p>Turns out there's a very simple trick here, which is to use <a href="http://oeis.org/A050231">this
+sequence</a>.</p>
+
+<p>That is, the number of n-tosses having a run of 3 or more heads -
+heads in this case are gaps in the adapter chain of n
+adapters. These runs are invalid so if we subtract them from 2^n
+(which would be the world in which all adapters could plug into all
+others), we get the right answer.</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defonce tribonacci
+  (memoize (fn [n]
+             (case n
+               0 0
+               1 0
+               2 1
+               3 3
+               (- (* 3 (tribonacci (- n 1)))
+                  (tribonacci (- n 2))
+                  (tribonacci (- n 3))
+                  (* 2 (tribonacci (- n 4))))))))</pre></td></tr><tr><td class="docs"><p>Counts the number of valid chains in <code>adapters</code>.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn count-chains
+  [adapters]
+  (-&gt;&gt; adapters
+       voltage-differences
+       (partition-by identity) ;; get runs of the same difference
+       (filter (comp #{1} first)) ;; we only care about 1s
+       (map count) ;; count the length of the runs
+       (map #(- (Math/pow 2 (dec %)) ;; possible combinations
+                (tribonacci (max 0 (- % 2))))) ;; invalid combinations
+       (map biginteger) ;; result overflows int
+       (reduce *)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(deftest count-chains-test
+  (is (= 1 (count-chains [1])))
+  (is (= 2 (count-chains [1 2])))
+  (is (= 4 (count-chains [1 2 3])))
+  (is (= 7 (count-chains [1 2 3 4])))
+  (is (= 13 (count-chains [1 2 3 4 5])))
+  (is (= 24 (count-chains [1 2 3 4 5 6])))
+  (is (= 44 (count-chains [1 2 3 4 5 6 7])))
+  (is (= 81 (count-chains [1 2 3 4 5 6 7 8])))
+  (is (= 1 (count-chains [1 4 5])))
+  (is (= 2 (count-chains [1 2 5])))
+  (is (= 1 (count-chains [3 4 7])))
+  (is (= 4 (count-chains [1 2 5 6 7])))
+  (is (= 16 (count-chains [1 2 3 5 6 7 8])))
+  (is (= 8 (count-chains example-adapters)))
+  (is (= 19208 (count-chains example-adapters-2)))
+  (is (= 24179327893504 (count-chains (load-input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-1
   (:require [clojure.test :refer [deftest testing is]]
             [clojure.math.combinatorics :refer [combinations]]
@@ -3710,7 +3809,7 @@ is a sum of two of the previous N numbers.</p>
 </td><td class="codes"><pre class="brush: clojure">(deftest contiguous-sum-tests
   (is (= 62 (contiguous-sum 127 test-input)))
   (let [input (load-input)]
-    (is (= 55732936 (contiguous-sum (check-data 25 input) input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-8">advent-of-code-2020.day-8</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-9">advent-of-code-2020.day-9</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+    (is (= 55732936 (contiguous-sum (check-data 25 input) input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-10">advent-of-code-2020.day-10</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-8">advent-of-code-2020.day-8</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-9">advent-of-code-2020.day-9</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
