@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.0 (2020-12-19)
+
+- Slow solution to day 11 part 1.
+
 ## 0.10.0 (2020-12-13)
 
 - Solved day 10 with some clever (for me) maths.

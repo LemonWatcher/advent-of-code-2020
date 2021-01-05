@@ -1,4 +1,4 @@
-(defproject advent-of-code-2020 "0.10.0"
+(defproject advent-of-code-2020 "0.11.0"
   :description "Advent of Code 2020"
   :url "https://github.com/lemonwatcher/advent-of-code-2020"
   :license {:name "GNU Affero General Public License Version 3"
@@ -9,6 +9,7 @@
                  [criterium "0.4.6"]
                  [instaparse "1.4.10"]
                  [org.clojure/core.logic "1.0.0"]
-                 [aysylu/loom "1.0.2"]]
+                 [aysylu/loom "1.0.2"]
+                 [com.climate/claypoole "1.1.4"]]
   :plugins [[lein-marginalia "0.9.1"]]
   :repl-options {:init-ns advent-of-code-2020})

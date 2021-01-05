@@ -2865,8 +2865,8 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.10.0</h2><br /><p>Advent of Code 2020</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr><tr><td class="dep-name">aysylu/loom</td><td class="dotted"><hr /></td><td class="dep-version">1.0.2</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-10">advent-of-code-2020.day-10</a></li><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li><li><a href="#advent-of-code-2020.day-8">advent-of-code-2020.day-8</a></li><li><a href="#advent-of-code-2020.day-9">advent-of-code-2020.day-9</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-10" name="advent-of-code-2020.day-10"><h1 class="project-name">advent-of-code-2020.day-10</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>advent-of-code-2020 -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/lemonwatcher/advent-of-code-2020">advent-of-code-2020</a></h1><h2 class="project-version">0.11.0</h2><br /><p>Advent of Code 2020</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">org.clojure/math.combinatorics</td><td class="dotted"><hr /></td><td class="dep-version">0.1.6</td></tr><tr><td class="dep-name">shams/priority-queue</td><td class="dotted"><hr /></td><td class="dep-version">0.1.2</td></tr><tr><td class="dep-name">criterium</td><td class="dotted"><hr /></td><td class="dep-version">0.4.6</td></tr><tr><td class="dep-name">instaparse</td><td class="dotted"><hr /></td><td class="dep-version">1.4.10</td></tr><tr><td class="dep-name">org.clojure/core.logic</td><td class="dotted"><hr /></td><td class="dep-version">1.0.0</td></tr><tr><td class="dep-name">aysylu/loom</td><td class="dotted"><hr /></td><td class="dep-version">1.0.2</td></tr><tr><td class="dep-name">com.climate/claypoole</td><td class="dotted"><hr /></td><td class="dep-version">1.1.4</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#advent-of-code-2020.day-10">advent-of-code-2020.day-10</a></li><li><a href="#advent-of-code-2020.day-11">advent-of-code-2020.day-11</a></li><li><a href="#advent-of-code-2020.day-1">advent-of-code-2020.day-1</a></li><li><a href="#advent-of-code-2020.day-2">advent-of-code-2020.day-2</a></li><li><a href="#advent-of-code-2020.day-3">advent-of-code-2020.day-3</a></li><li><a href="#advent-of-code-2020.day-4">advent-of-code-2020.day-4</a></li><li><a href="#advent-of-code-2020.day-5">advent-of-code-2020.day-5</a></li><li><a href="#advent-of-code-2020.day-6">advent-of-code-2020.day-6</a></li><li><a href="#advent-of-code-2020.day-7">advent-of-code-2020.day-7</a></li><li><a href="#advent-of-code-2020.day-8">advent-of-code-2020.day-8</a></li><li><a href="#advent-of-code-2020.day-9">advent-of-code-2020.day-9</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-10" name="advent-of-code-2020.day-10"><h1 class="project-name">advent-of-code-2020.day-10</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-10
   (:require [clojure.test :refer [deftest testing is]]
             [clojure.string :refer [split-lines]]
@@ -2965,7 +2965,175 @@ others), we get the right answer.</p>
   (is (= 16 (count-chains [1 2 3 5 6 7 8])))
   (is (= 8 (count-chains example-adapters)))
   (is (= 19208 (count-chains example-adapters-2)))
-  (is (= 24179327893504 (count-chains (load-input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+  (is (= 24179327893504 (count-chains (load-input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-11" name="advent-of-code-2020.day-11"><h1 class="project-name">advent-of-code-2020.day-11</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-11
+  (:require [clojure.test :refer [with-test is deftest]]
+            [clojure.string :refer [split]]
+            [com.climate.claypoole :as cp]
+            [clojure.java.io :as io]))</pre></td></tr><tr><td class="docs"><h1>Day 11: Seating System</h1>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def example-layout
+  &quot;L.LL.LL.LL
+LLLLLLL.LL
+L.L.L..L..
+LLLL.LL.LL
+L.LL.LL.LL
+L.LLLLL.LL
+..L.L.....
+LLLLLLLLLL
+L.LLLLLL.L
+L.LLLLL.LL&quot;)</pre></td></tr><tr><td class="docs"><p>Read <code>layout</code> as a string into a two-dimensional grid of chars with
+  the first dimension addressing the row, the second the column.</p>
+</td><td class="codes"><pre class="brush: clojure">(with-test
+  (defn initial-layout
+    [layout]
+    (mapv vec (split layout #&quot;\n&quot;)))
+  (is (= \L (-&gt; example-layout initial-layout (get-in [0 0]))))
+  (is (= \. (-&gt; example-layout initial-layout (get-in [0 1]))))
+  (is (= \L (-&gt; &quot;LLL&quot; initial-layout (get-in [0 2])))))</pre></td></tr><tr><td class="docs"><p>Retrieve the contents of the grid at <code>row,col</code>.</p>
+</td><td class="codes"><pre class="brush: clojure">(with-test
+  (defn seat
+    [layout row col]
+    (get-in layout [row col] nil))
+  (is (= \. (-&gt; example-layout initial-layout (seat 6 0))))
+  (is (= \. (-&gt; example-layout initial-layout (seat 6 1)))))</pre></td></tr><tr><td class="docs"><p>Returns a sequence containing the contents of cells adjacent to
+  <code>row,col</code>.</p>
+</td><td class="codes"><pre class="brush: clojure">(with-test
+  (def adjacent-seats
+    (memoize
+     (fn [layout row col]
+       (for [drow [-1 0 1]
+             dcol [-1 0 1]
+             :when (not= drow dcol 0)
+             :let [seat (seat layout (+ row drow) (+ col dcol))]
+             :when seat]
+         seat))))
+  (let [layout (initial-layout &quot;#L#\nL.L\n#L#&quot;)]
+    (is (= (seq &quot;LL.&quot;) (-&gt; layout (adjacent-seats 0 0))))
+    (is (= (seq &quot;#L#LL#L#&quot;) (-&gt; layout (adjacent-seats 1 1))))))</pre></td></tr><tr><td class="docs"><p>Is this seat occupied?</p>
+</td><td class="codes"><pre class="brush: clojure">(defn occupied?
+  [seat]
+  (= \# seat))</pre></td></tr><tr><td class="docs"><p>Does this seat have four or more adjacent occupied seats?</p>
+</td><td class="codes"><pre class="brush: clojure">(defn crowded?
+  [neighbours]
+  (-&gt;&gt; neighbours
+       (filter occupied?)
+       (take 4)
+       (count)
+       (= 4)))</pre></td></tr><tr><td class="docs"><p>Does this seat only have unoccupied adjacent seats?</p>
+</td><td class="codes"><pre class="brush: clojure">(defn quiet?
+  [neighbours]
+  (every? (complement occupied?) neighbours))</pre></td></tr><tr><td class="docs"><p>Is this seat empty?</p>
+</td><td class="codes"><pre class="brush: clojure">(defn free?
+  [seat]
+  (= \L seat))</pre></td></tr><tr><td class="docs"><p>Returns a vector <code>[row col new-value]</code> indicating that the seat at
+  the specified <code>row</code> and <code>col</code> should be updated to <code>new-value</code>.</p>
+</td><td class="codes"><pre class="brush: clojure">(with-test
+  (defn change-seat
+    [layout row col]
+    (let [seat (seat layout row col)
+          neighbours (adjacent-seats layout row col)]
+      (cond
+        (and (free? seat)
+             (quiet? neighbours)) [row col \#]
+        (and (occupied? seat)
+             (crowded? neighbours)) [row col \L])))
+  (let [quiet (initial-layout &quot;LLL\nLLL\nLLL&quot;)
+        busy (initial-layout &quot;###\n###\n###&quot;)]
+    (is (= [1 1 \#] (change-seat quiet 1 1)))
+    (is (= [1 1 \L] (change-seat busy 1 1)))
+    (is (nil? (change-seat busy 0 0)))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def example-rounds
+  [example-layout
+   &quot;#.##.##.##
+#######.##
+#.#.#..#..
+####.##.##
+#.##.##.##
+#.#####.##
+..#.#.....
+##########
+#.######.#
+#.#####.##&quot;
+   &quot;#.LL.L#.##
+#LLLLLL.L#
+L.L.L..L..
+#LLL.LL.L#
+#.LL.LL.LL
+#.LLLL#.##
+..L.L.....
+#LLLLLLLL#
+#.LLLLLL.L
+#.#LLLL.##&quot;
+   &quot;#.##.L#.##
+#L###LL.L#
+L.#.#..#..
+#L##.##.L#
+#.##.LL.LL
+#.###L#.##
+..#.#.....
+#L######L#
+#.LL###L.L
+#.#L###.##&quot;
+   &quot;#.#L.L#.##
+#LLL#LL.L#
+L.L.L..#..
+#LLL.##.L#
+#.LL.LL.LL
+#.LL#L#.##
+..L.L.....
+#L#LLLL#L#
+#.LLLLLL.L
+#.#L#L#.##&quot;
+   &quot;#.#L.L#.##
+#LLL#LL.L#
+L.#.L..#..
+#L##.##.L#
+#.#L.LL.LL
+#.#L#L#.##
+..L.L.....
+#L#L##L#L#
+#.LLLLLL.L
+#.#L#L#.##&quot;])</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def cpu-pool (cp/threadpool (cp/ncpus)))</pre></td></tr><tr><td class="docs"><p>Update all seats in layout for one round.</p>
+</td><td class="codes"><pre class="brush: clojure">(with-test
+  (defn all-change
+    [layout]
+    (-&gt;&gt; (cp/upfor cpu-pool
+                   [row (range 0 (count layout))
+                    col (range 0 (count (first layout)))]
+                   (change-seat layout row col))
+         (filter some?)
+         (reduce (fn [new-layout [row col change]]
+                   (assoc-in new-layout [row col] change))
+                 layout)))
+  (dotimes [i (dec (count example-rounds))]
+    (is (= (initial-layout (example-rounds (inc i)))
+           (all-change (initial-layout (example-rounds i)))))))</pre></td></tr><tr><td class="docs"><p>Iteratively call <code>all-change</code> on layout until the result converges.</p>
+</td><td class="codes"><pre class="brush: clojure">(with-test
+  (defn converge
+    [layout]
+    (reduce (fn [prev-layout layout]
+              (if (= prev-layout layout)
+                (reduced layout)
+                layout))
+            (iterate all-change layout)))
+  (is (= (initial-layout (last example-rounds))
+         (converge (initial-layout example-layout)))))</pre></td></tr><tr><td class="docs"><p>Get the input layout.</p>
+</td><td class="codes"><pre class="brush: clojure">(defn load-input
+  []
+  (slurp (io/resource &quot;input/day_11.txt&quot;)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(with-test
+  (defn eventual-occupants
+    [layout]
+    (-&gt;&gt; layout
+         (initial-layout)
+         (converge)
+         (flatten)
+         (filter occupied?)
+         count))
+  (is (= 37 (eventual-occupants example-layout)))
+  (is (= 0 (eventual-occupants (load-input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#advent-of-code-2020.day-1" name="advent-of-code-2020.day-1"><h1 class="project-name">advent-of-code-2020.day-1</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns advent-of-code-2020.day-1
   (:require [clojure.test :refer [deftest testing is]]
             [clojure.math.combinatorics :refer [combinations]]
@@ -3809,7 +3977,7 @@ is a sum of two of the previous N numbers.</p>
 </td><td class="codes"><pre class="brush: clojure">(deftest contiguous-sum-tests
   (is (= 62 (contiguous-sum 127 test-input)))
   (let [input (load-input)]
-    (is (= 55732936 (contiguous-sum (check-data 25 input) input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-10">advent-of-code-2020.day-10</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-8">advent-of-code-2020.day-8</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-9">advent-of-code-2020.day-9</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+    (is (= 55732936 (contiguous-sum (check-data 25 input) input)))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-10">advent-of-code-2020.day-10</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-11">advent-of-code-2020.day-11</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-1">advent-of-code-2020.day-1</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-2">advent-of-code-2020.day-2</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-3">advent-of-code-2020.day-3</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-4">advent-of-code-2020.day-4</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-5">advent-of-code-2020.day-5</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-6">advent-of-code-2020.day-6</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-7">advent-of-code-2020.day-7</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-8">advent-of-code-2020.day-8</li><li class="floating-toc-li" id="floating-toc_advent-of-code-2020.day-9">advent-of-code-2020.day-9</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
